@@ -63,3 +63,12 @@ body {
 .type-form-wrapper {
   border-bottom: 1px solid gray;
 }
+
+.gauge {
+  height: 12px;
+}
+
+.gauge-wrapper {
+  border: 1px solid;
+  height: 12px;
+}
