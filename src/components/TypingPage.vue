@@ -6,10 +6,10 @@
     </div>
     <button v-if="startFlg!=true" class="start-button mb-20" @click="gameStart">START</button>
     <div v-if="startFlg">
-      <div class="question mb-20">apple</div>
+      <div class="question mb-20">{{ current_question }}</div>
       <div class="clear">Clear!</div>
       <div class="type-form-wrapper mb-20">
-        <input type="text" class="type-form">
+        <input v-model="typeBox" type="text" class="type-form">
       </div>
 
       <div class="gauge-wrapper mb-20">
@@ -25,12 +25,33 @@ export default {
   name: 'TypingPage',
   data() {
     return {
-      startFlg: ''
+      startFlg: '',
+      current_question: '',
+      questions: [
+        'apple',
+        'banana',
+        'orange',
+        'kiwi',
+        'melon',
+      ],
+      typeBox: ''
     }
   },
   methods: {
     gameStart: function() {
       this.startFlg = true;
+    }
+  },
+  mounted: function() {
+    this.current_question = this.questions[0]
+  },
+  watch: {
+    typeBox: function(e) {
+      if (e == this.current_question) {
+        this.questions.splice(0,1)
+        this.current_question = this.questions[0]
+        this.typeBox = ''
+      }
     }
   }
 }
