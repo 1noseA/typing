@@ -7,6 +7,9 @@
     <button class="start-button mb-20">START</button>
     <div class="question mb-20">apple</div>
     <div class="clear">Clear!</div>
+    <div class="type-form-wrapper">
+      <input type="text" class="type-form">
+    </div>
   </div>
 </template>
 

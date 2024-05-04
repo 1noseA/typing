@@ -53,3 +53,13 @@ body {
 .clear {
   color: #03a9f4;
 }
+
+.type-form {
+  text-align: center;
+  outline: none;
+  border: none;
+}
+
+.type-form-wrapper {
+  border-bottom: 1px solid gray;
+}
