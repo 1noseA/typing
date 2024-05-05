@@ -9,7 +9,7 @@
       <div class="question mb-20">{{ current_question }}</div>
       <div v-if="current_question_counts == question_counts" class="clear">Clear!</div>
       <div class="type-form-wrapper mb-20">
-        <input v-model="typeBox" type="text" class="type-form">
+        <input id="typeForm" v-model="typeBox" type="text" class="type-form">
       </div>
 
       <div class="gauge-wrapper mb-20">
@@ -57,6 +57,9 @@ export default {
   methods: {
     gameStart: function() {
       this.startFlg = true;
+      this.$nextTick(function() {
+        document.getElementById('typeForm').focus()
+      })
     }
   },
   // 描画されたタイミング
