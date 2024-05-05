@@ -8,7 +8,7 @@
     <div v-if="startFlg">
       <div class="question mb-20">{{ currentQuestion }}</div>
       <div v-if="currentQuestionCounts === questionCounts" class="clear">Clear!</div>
-      <div class="type-form-wrapper mb-20">
+      <div v-else class="type-form-wrapper mb-20">
         <input id="typeForm" v-model="typeBox" type="text" class="type-form">
       </div>
 
